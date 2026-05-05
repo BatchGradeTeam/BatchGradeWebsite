@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "generate:favicons": "node scripts/generate-favicons.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -11,7 +12,8 @@
   "dependencies": {
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "to-ico": "^1.1.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -22,5 +24,9 @@
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "png-to-ico": "^1.0.7",
+    "sharp": "^0.32.6"
   }
 }
