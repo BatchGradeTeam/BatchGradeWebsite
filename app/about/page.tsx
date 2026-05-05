@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GITHUB_URL } from "@/lib/constants";
+import { getContributors } from "@/lib/github";
 
 export const metadata: Metadata = {
   title: "About",
@@ -27,89 +28,17 @@ const avatarColors = [
   "bg-rose-100 text-rose-700",
 ];
 
-const team = [
-  {
-    name: "Nicholas Martinez",
-    handle: "NicholasAMartinez",
-    role: "Project Contributor",
-    bio: "71 contributions to the BatchGrade repository.",
-    initials: "N",
-    href: "https://github.com/NicholasAMartinez",
-  },
-  {
-    name: "Jerome Azicate",
-    handle: "jazicate",
-    role: "Project Contributor",
-    bio: "68 contributions to the BatchGrade repository.",
-    initials: "JA",
-    href: "https://github.com/jazicate",
-  },
-  {
-    name: "Tri Tran",
-    handle: "trant98",
-    role: "Project Contributor",
-    bio: "54 contributions to the BatchGrade repository.",
-    initials: "TT",
-    href: "https://github.com/trant98",
-  },
-  {
-    name: "Alex Villegas",
-    handle: "villea7",
-    role: "Project Contributor",
-    bio: "49 contributions to the BatchGrade repository.",
-    initials: "AV",
-    href: "https://github.com/villea7",
-  },
-  {
-    name: "Truc Bui",
-    handle: "buit7",
-    role: "Project Contributor",
-    bio: "40 contributions to the BatchGrade repository.",
-    initials: "TB",
-    href: "https://github.com/buit7",
-  },
-  {
-    name: "Kosuke Carlson",
-    handle: "lAmKosuke",
-    role: "Project Contributor",
-    bio: "34 contributions to the BatchGrade repository.",
-    initials: "KC",
-    href: "https://github.com/lAmKosuke",
-  },
-  {
-    name: "Alvin Singo",
-    handle: "asingo01",
-    role: "Project Contributor",
-    bio: "34 contributions to the BatchGrade repository.",
-    initials: "A",
-    href: "https://github.com/asingo01",
-  },
-  {
-    name: "Scott Koss",
-    handle: "HiMyNameisScott",
-    role: "Project Contributor",
-    bio: "28 contributions to the BatchGrade repository.",
-    initials: "SK",
-    href: "https://github.com/HiMyNameisScott",
-  },
-  {
-    name: "Joshua Choi",
-    handle: "choij47",
-    role: "Project Contributor",
-    bio: "22 contributions to the BatchGrade repository.",
-    initials: "JC",
-    href: "https://github.com/choij47",
-  },
-];
+// Contributors will be fetched at runtime to show real-time counts.
 
-const stats = [
-  { value: String(team.length), label: "Team members" },
-  { value: "3", label: "Platforms" },
-  { value: "Free", label: "Base version" },
-  { value: "Active", label: "Development" },
-];
+export default async function AboutPage() {
+  const contributors = await getContributors();
 
-export default function AboutPage() {
+  const stats = [
+    { value: String(contributors.length), label: "Team members" },
+    { value: "3", label: "Platforms" },
+    { value: "Free", label: "Base version" },
+    { value: "Active", label: "Development" },
+  ];
   return (
     <div className="min-h-screen bg-white">
       {/* Introduces the project and its purpose. */}
@@ -268,26 +197,24 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {team.map(({ name, handle, role, bio, initials, href }, i) => (
+            {contributors.map((c, i) => (
               <div
-                key={handle}
+                key={c.login}
                 className="p-6 rounded-2xl border border-zinc-100 bg-zinc-50 hover:border-blue-200 hover:shadow-sm transition-all duration-200"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shrink-0 ${avatarColors[i % avatarColors.length]}`}
-                  >
-                    {initials}
+                  <div className={`w-12 h-12 rounded-full overflow-hidden shrink-0`}>
+                    <img src={c.avatar_url} alt={c.login} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <p className="font-bold text-zinc-900">{name}</p>
-                    <p className="text-zinc-400 text-xs font-medium">@{handle}</p>
-                    <p className="text-blue-600 text-xs font-medium">{role}</p>
+                    <p className="font-bold text-zinc-900">{c.login}</p>
+                    <p className="text-zinc-400 text-xs font-medium">@{c.login}</p>
+                    <p className="text-blue-600 text-xs font-medium">Project Contributor</p>
                   </div>
                 </div>
-                <p className="text-zinc-500 text-sm leading-relaxed">{bio}</p>
+                <p className="text-zinc-500 text-sm leading-relaxed">{c.contributions} contributions to the BatchGrade repository.</p>
                 <a
-                  href={href}
+                  href={c.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 mt-4 text-xs text-zinc-400 hover:text-zinc-700 transition-colors"
@@ -314,12 +241,12 @@ export default function AboutPage() {
             Project Status
           </p>
           <h2 className="text-3xl font-extrabold text-zinc-900 mb-4">
-            BatchGrade is still taking shape
+            BatchGrade has launched
           </h2>
           <p className="text-zinc-500 leading-relaxed mb-10 max-w-xl mx-auto">
-            The team is building the base desktop version as a free tool while
-            continuing to refine the product. A hosted SaaS service is planned
-            for future classroom and department workflows.
+            BatchGrade has launched. The base desktop version is available for
+            free, and the team continues to refine the product while planning a
+            hosted SaaS option for classroom and department workflows.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

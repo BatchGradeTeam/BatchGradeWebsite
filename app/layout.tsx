@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "BatchGrade — Automated Grading for CS Classrooms",
+    default: "BatchGrade",
     template: "%s | BatchGrade",
   },
   description:
-    "BatchGrade is an automated grading tool for programming assignments, with a free base version available for download and a future hosted service planned.",
+    "Automated Grading for CS Classrooms. BatchGrade is an automated grading tool for programming assignments, with the base desktop version available for free and a future hosted service planned.",
   keywords: [
     "automated grading",
     "CS education",
