@@ -116,9 +116,26 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto px-6 py-28 lg:py-40">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-1.5 text-sm font-medium mb-8">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full inline-block animate-pulse" />
-              In Development &nbsp;&middot;&nbsp; UNLV CS 472 / 672
+            <div className="mb-8 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-lg shadow-blue-950/20 backdrop-blur-sm">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(74,222,128,0.15)]" />
+                  <div>
+                    <p className="font-semibold text-white">BatchGrade has launched.</p>
+                    <p className="text-sm text-blue-100/90">
+                      The app is now available for download for Windows, macOS, and Linux.
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href={`${GITHUB_URL}/releases`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-bold text-blue-900 transition-colors hover:bg-blue-50"
+                >
+                  Download now
+                </a>
+              </div>
             </div>
             <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
               Grade code submissions.
@@ -126,9 +143,9 @@ export default function Home() {
               <span className="text-blue-300">In minutes, not hours.</span>
             </h1>
             <p className="text-lg lg:text-xl text-blue-100 mb-10 leading-relaxed max-w-2xl">
-              BatchGrade is an in-progress desktop application with a free base
-              version for automating student programming assignment evaluation,
-              so educators can focus on teaching, not grading.
+              BatchGrade is a desktop application with a free base version for
+              automating student programming assignment evaluation, so educators
+              can focus on teaching, not grading.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -247,7 +264,7 @@ export default function Home() {
             Ready to reclaim your grading time?
           </h2>
           <p className="text-blue-200 text-lg mb-10 leading-relaxed">
-            BatchGrade is still in development, with a free base version for
+            BatchGrade has launched, with a free base version available for
             local grading and a future hosted SaaS service planned for expanded
             classroom workflows.
           </p>

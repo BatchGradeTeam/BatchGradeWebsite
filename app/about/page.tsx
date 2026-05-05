@@ -202,9 +202,9 @@ export default function AboutPage() {
                   desc: "All data stays on your machine. No cloud, no accounts, no third-party access.",
                 },
                 {
-                  icon: "🚧",
-                  title: "In Progress",
-                  desc: "BatchGrade is under active development, with the base version available for free and a hosted SaaS option planned for the future.",
+                  icon: "🚀",
+                  title: "Launched",
+                  desc: "BatchGrade has launched, with the base version available for free and a hosted SaaS option planned for the future.",
                 },
               ].map(({ icon, title, desc }) => (
                 <div

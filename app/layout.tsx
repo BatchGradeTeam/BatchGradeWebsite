@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | BatchGrade",
   },
   description:
-    "BatchGrade is an in-progress automated grading tool for programming assignments, with a free base version and a future hosted service planned.",
+    "BatchGrade is an automated grading tool for programming assignments, with a free base version available for download and a future hosted service planned.",
   keywords: [
     "automated grading",
     "CS education",
@@ -28,6 +28,13 @@ export const metadata: Metadata = {
     "classroom tools",
     "student grading",
   ],
+  icons: {
+    icon: [
+      { url: "/circle-check-big.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/circle-check-big.svg",
+    apple: "/circle-check-big.svg",
+  },
 };
 
 export default function RootLayout({

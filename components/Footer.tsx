@@ -26,8 +26,8 @@ export default function Footer() {
               <span className="text-blue-400 font-extrabold text-lg">Grade</span>
             </div>
             <p className="text-sm leading-relaxed text-zinc-500">
-              In-progress automated grading for CS classrooms, with a free base
-              version and a future hosted service planned.
+              Automated grading for CS classrooms, with a free base version and
+              a future hosted service planned.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function Footer() {
 
         <div className="border-t border-zinc-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm">
           <span>Built by UNLV CS 472 / 672 &mdash; Group 3</span>
-          <span className="text-zinc-600">Currently in active development</span>
+          <span className="text-zinc-600">Now available for download</span>
         </div>
       </div>
     </footer>
