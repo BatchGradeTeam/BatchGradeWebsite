@@ -1,0 +1,72 @@
+name: Feature
+description: Propose a new website, documentation, or repository workflow feature for BGW
+title: "[FEATURE] "
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: affected_area
+    attributes:
+      label: Affected Area
+      description: Which part of the project will this feature affect?
+      options:
+        - Homepage
+        - Docs page
+        - About page
+        - Shared layout / navigation / footer
+        - New page or section
+        - Documentation / README
+        - GitHub workflow / CI
+        - Repository tooling
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What capability should be added, and why is it useful?
+      placeholder: Briefly describe the feature and the value it adds to BGW.
+    validations:
+      required: true
+
+  - type: textarea
+    id: functional_requirements
+    attributes:
+      label: Functional Requirements
+      description: Break this feature into smaller functional requirements that can become separate issues or implementation steps.
+      value: |
+        - [ ] FR-1:
+        - [ ] FR-2:
+        - [ ] FR-3:
+        - [ ] FR-4:
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: Describe a possible implementation approach if you have one.
+      placeholder: N/A or briefly describe a possible implementation approach.
+    validations:
+      required: false
+
+  - type: textarea
+    id: done_when
+    attributes:
+      label: Done When
+      description: How will we know this feature is complete?
+      placeholder: Define the completion criteria for this feature.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add screenshots, diagrams, mockups, references, or related issues if helpful.
+      placeholder: N/A
+    validations:
+      required: false
