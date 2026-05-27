@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "generate:favicons": "node scripts/generate-favicons.js",
+    "generate:favicons": "node scripts/generate-favicons.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
