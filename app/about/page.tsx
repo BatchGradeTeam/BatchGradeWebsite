@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { GITHUB_URL } from "@/lib/constants";
 import { getContributors } from "@/lib/github";
@@ -18,14 +19,6 @@ const techStack = [
   { icon: "▲", name: "Next.js", desc: "This website" },
   { icon: "🎨", name: "Tailwind CSS", desc: "Utility-first styling" },
   { icon: "🔬", name: "Vitest", desc: "Unit & integration testing" },
-];
-
-const avatarColors = [
-  "bg-blue-100 text-blue-700",
-  "bg-violet-100 text-violet-700",
-  "bg-emerald-100 text-emerald-700",
-  "bg-orange-100 text-orange-700",
-  "bg-rose-100 text-rose-700",
 ];
 
 // Contributors will be fetched at runtime to show real-time counts.
@@ -197,14 +190,20 @@ export default async function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {contributors.map((c, i) => (
+            {contributors.map((c) => (
               <div
                 key={c.login}
                 className="p-6 rounded-2xl border border-zinc-100 bg-zinc-50 hover:border-blue-200 hover:shadow-sm transition-all duration-200"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className={`w-12 h-12 rounded-full overflow-hidden shrink-0`}>
-                    <img src={c.avatar_url} alt={c.login} className="w-full h-full object-cover" />
+                    <Image
+                      src={c.avatar_url}
+                      alt={c.login}
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-bold text-zinc-900">{c.login}</p>
