@@ -1,0 +1,69 @@
+name: Other
+description: Request supporting work for the BatchGrade website or repository workflow
+title: "[DOC/TEST/OTHER] "
+body:
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request Type
+      description: What kind of request is this?
+      options:
+        - Documentation
+        - Test coverage or validation
+        - Repository support
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected_area
+    attributes:
+      label: Affected Area
+      description: Which part of the project is affected?
+      options:
+        - README
+        - Docs page
+        - About page
+        - Homepage
+        - GitHub Actions
+        - Issue / PR templates
+        - Project configuration
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: describe_request
+    attributes:
+      label: Describe the Request
+      description: Describe the supporting work that needs to be done.
+      placeholder: Explain what needs to be updated, added, clarified, validated, or maintained.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you want to see implemented.
+      placeholder: Describe the expected change or implementation direction.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives_considered
+    attributes:
+      label: Alternatives Considered
+      description: Describe any alternatives that were considered.
+      placeholder: N/A or describe any alternative approaches.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add screenshots, links, notes, or related issues if helpful.
+      placeholder: N/A
+    validations:
+      required: false
