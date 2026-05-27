@@ -1,0 +1,94 @@
+name: Refactor
+description: Propose a code, content structure, or repository workflow refactor for the BatchGrade website
+title: "[REFACTOR] "
+labels:
+  - refactor
+body:
+  - type: dropdown
+    id: affected_area
+    attributes:
+      label: Affected Area
+      description: Which part of the project should be refactored?
+      options:
+        - Homepage
+        - Docs page
+        - About page
+        - Shared layout / navigation / footer
+        - Components
+        - Styling / CSS structure
+        - Repository structure
+        - GitHub workflow / CI
+        - Build or configuration files
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: affected_files
+    attributes:
+      label: Affected File(s) Or Scope
+      description: Add the files, folders, or scope if known
+      placeholder: app/page.tsx, components/, app/layout.tsx, .github/workflows/, README.md
+    validations:
+      required: false
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be refactored?
+      placeholder: Briefly describe the refactor.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this refactor needed?
+      placeholder: |
+        Explain why the current implementation should be improved.
+        Examples: reduce duplication, improve maintainability, simplify testing,
+        improve architecture, or prepare for future work.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_changes
+    attributes:
+      label: Proposed Changes
+      description: What changes should be made?
+      placeholder: |
+        Describe the structural, code, or organization changes you want to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impacted_areas
+    attributes:
+      label: Impacted Areas
+      description: List the files, components, workflows, tests, or documentation that may be affected.
+      placeholder: app/page.tsx, components/Nav.tsx, .github/workflows/ci.yml, README.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation
+      description: How should this refactor be verified?
+      placeholder: |
+        Describe how the refactor should be validated.
+        Examples: existing tests pass, build succeeds, manual regression
+        check on /docs and /about, or workflow still runs correctly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add diagrams, screenshots, links, notes, or related issues if helpful.
+      placeholder: N/A
+    validations:
+      required: false
