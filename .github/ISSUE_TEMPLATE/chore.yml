@@ -1,0 +1,79 @@
+name: Chore
+description: Track maintenance, tooling, configuration, or housekeeping work for the BatchGrade website
+title: "[CHORE] "
+labels:
+  - chore
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected Area
+      description: Which part of the project does this chore affect?
+      options:
+        - Repository configuration
+        - GitHub workflow / CI
+        - Dependencies
+        - Documentation
+        - Project structure
+        - Build tooling
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: file_or_scope
+    attributes:
+      label: Affected File(s) Or Scope
+      description: Add the file, folder, or general scope if known
+      placeholder: package.json, .github/workflows/ci.yml, README.md, app/, components/
+    validations:
+      required: false
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What maintenance task needs to be done?
+      placeholder: Briefly describe the chore.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+      description: Why does this need to be done?
+      placeholder: Explain the motivation, cleanup need, or maintenance reason.
+    validations:
+      required: true
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: List the required outcomes for this chore using task-list format.
+      value: |
+        - [ ] REQ-1:
+        - [ ] REQ-2:
+        - [ ] REQ-3:
+        - [ ] REQ-4:
+    validations:
+      required: true
+
+  - type: textarea
+    id: done_when
+    attributes:
+      label: Done When
+      description: What should be true when this chore is complete?
+      placeholder: Define the completion criteria.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add links, related issues, commands, or notes if helpful
+      placeholder: N/A
+    validations:
+      required: false

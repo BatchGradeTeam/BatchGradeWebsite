@@ -1,0 +1,93 @@
+name: Bug
+description: Report a bug in the BatchGrade website or repo workflow
+title: "[BUG] "
+labels:
+  - bug
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected Area
+      description: Which part of the project is affected?
+      options:
+        - Homepage
+        - Documentation page
+        - About page
+        - Navigation / footer
+        - Styling / responsiveness
+        - GitHub workflow / CI
+        - Content / copy
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: route
+    attributes:
+      label: Affected Page Or File
+      description: Add the route or file if known
+      placeholder: /docs, /about, README.md, .github/workflows/ci.yml
+    validations:
+      required: false
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken?
+      placeholder: Briefly describe the bug and what happens.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can someone reproduce the problem?
+      placeholder: |
+        1. Go to "..."
+        2. Click on "..."
+        3. Resize to "..."
+        4. See issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: Describe the expected result.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How serious is this issue?
+      options:
+        - Blocks basic usage
+        - Major visual or functional issue
+        - Minor issue
+        - Cosmetic only
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS, device, or branch if relevant
+      placeholder: Chrome on Windows 11, Safari on iPhone, branch feature/docs-update
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add screenshots, logs, related issues, or links
+      placeholder: N/A
+    validations:
+      required: false

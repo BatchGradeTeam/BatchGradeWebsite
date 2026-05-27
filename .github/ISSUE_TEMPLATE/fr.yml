@@ -1,0 +1,71 @@
+name: Functional Requirement
+description: Track a specific implementation requirement for a larger BGW feature
+title: "[<FEATURE> FR-1] "
+labels:
+  - enhancement
+body:
+  - type: input
+    id: parent_feature
+    attributes:
+      label: Parent Feature
+      description: Link the parent feature issue or name the larger feature this FR belongs to
+      placeholder: #123, Website docs overhaul, GitHub workflow improvements
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected_area
+    attributes:
+      label: Affected Area
+      description: Which part of the project does this requirement affect?
+      options:
+        - Homepage
+        - Docs page
+        - About page
+        - Shared layout / navigation / footer
+        - New page or section
+        - Documentation / README
+        - GitHub workflow / CI
+        - Repository tooling
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What specific capability or implementation step is required?
+      placeholder: Describe the specific requirement this issue is tracking.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Define what must be true for this functional requirement to be complete.
+      value: |
+        - [ ] AC-1:
+        - [ ] AC-2:
+        - [ ] AC-3:
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: Describe a possible implementation approach if known.
+      placeholder: N/A or briefly describe a possible implementation approach.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add screenshots, diagrams, references, related PRs, or notes if helpful.
+      placeholder: N/A
+    validations:
+      required: false
