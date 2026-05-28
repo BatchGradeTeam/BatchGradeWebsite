@@ -34,6 +34,17 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
 
+<<<<<<< Updated upstream
+=======
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines, PR expectations, and commit message conventions.
+
+## License
+
+This repository is not open source. See [LICENSE](LICENSE) for the repository's proprietary terms and restrictions on reuse.
+
+>>>>>>> Stashed changes
 ## Available Scripts
 
 ```bash
