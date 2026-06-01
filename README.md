@@ -34,6 +34,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines, PR expectations, and commit message conventions.
+
 ## Available Scripts
 
 ```bash
